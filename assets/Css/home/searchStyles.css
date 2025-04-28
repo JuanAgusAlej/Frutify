@@ -1,0 +1,74 @@
+.container-search {
+  width: 98%;
+  background-image: url("../../Images/img-fondo-home.png");
+  background-size: auto;
+  border-radius: 15px;
+  margin-inline-start: 1%;
+}
+
+.container-search .card-search {
+  padding: 90px 30px;
+}
+
+.card-search .title-search {
+  width: 60%;
+  color: #fff;
+  margin: 0;
+}
+.card-search .description-search {
+  color: #f6e2ab;
+}
+.card-search .form-search {
+  width: 40%;
+  background-color: white;
+  padding: 15px;
+  border-radius: 5px;
+  display: flex;
+}
+.card-search .input-search {
+  width: 100%;
+  border: none;
+}
+.card-search .button-search {
+  border: none;
+  background-color: transparent;
+}
+.card-search .button-go-to-shop {
+  margin-top: 20px;
+  border-radius: 5px;
+  border: none;
+  padding-inline: 20px;
+}
+.card-search .button-go-to-shop .text-go-to-shop {
+  font-size: 16px;
+  font-family: "Quicksand", sans-serif;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .container-search .card-search {
+    padding: 20px;
+  }
+  .card-search .title-search {
+    font-size: 20px;
+  }
+  .card-search .description-search {
+    font-size: 13px;
+  }
+
+  .card-search .form-search {
+    padding: 5px;
+  }
+  .card-search .button-go-to-shop {
+    margin-top: 5px;
+    border-radius: 5px;
+    border: none;
+    padding-inline: 5px;
+  }
+  .card-search .button-go-to-shop .text-go-to-shop {
+    font-size: 12px;
+    font-family: "Quicksand", sans-serif;
+    font-weight: 300;
+    margin: 5px;
+  }
+}
