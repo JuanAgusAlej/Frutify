@@ -1,0 +1,19 @@
+name: Validate PR source for main branch
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  check-source-branch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check if PR comes from develop
+        run: |
+          echo "🔍 Checking PR source branch..."
+          if [[ "${{ github.head_ref }}" != "develop" ]]; then
+            echo "❌ Solo se permiten PRs desde develop hacia main."
+            exit 1
+          fi
+          echo "✅ PR válido: desde develop."
