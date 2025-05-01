@@ -1,7 +1,7 @@
 .container-banners {
   display: flex;
   justify-content: space-between;
-  margin: 30px 1%;
+  margin-block: 30px;
   border-radius: 20px;
 }
 
