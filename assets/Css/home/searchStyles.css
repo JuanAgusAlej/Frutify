@@ -1,9 +1,7 @@
 .container-search {
-  width: 98%;
   background-image: url("../../Images/img-fondo-home.png");
-  background-size: auto;
+  background-size: cover;
   border-radius: 15px;
-  margin-inline-start: 1%;
 }
 
 .container-search .card-search {

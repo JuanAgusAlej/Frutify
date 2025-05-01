@@ -1,29 +1,30 @@
 .container-products {
   width: auto;
-  margin: 30px 1%;
-  background-color: #d7ecfd;
   border-radius: 20px;
-  padding: 10px 30px;
+}
+.header-cards-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
 }
 .conteiner-cards-products {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  gap: 5px;
+  justify-content: space-between;
+  gap: 10px;
 }
 
 .card-product {
   background-color: #cecece;
   border-radius: 20px;
   padding: 10px;
-  width: 150px;
   height: 200px;
 }
 
 .card-product .img-card {
   background-color: #fff;
   border-radius: 20px;
-  width: 150px;
   height: 100px;
 }
 
@@ -66,4 +67,9 @@
   display: flex;
   align-items: center;
   gap: 5px;
+}
+@media (max-width: 768px) {
+  .conteiner-cards-products {
+    justify-content: space-evenly;
+  }
 }
