@@ -11,15 +11,17 @@
 .conteiner-cards-products {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 10px;
+  gap: 5px 1%;
 }
 
 .card-product {
-  background-color: #cecece;
+  background-color: #fff;
+  border: 1px solid #cecece;
   border-radius: 20px;
-  padding: 10px;
+  padding: 1%;
   height: 200px;
+  text-decoration: none;
+  color: black;
 }
 
 .card-product .img-card {

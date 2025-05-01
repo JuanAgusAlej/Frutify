@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../../assets/Css/styles.css" />
+    <link rel="stylesheet" href="../../assets/Css/Product-details/styles.css" />
+    <link rel="stylesheet" href="../../assets/Css/productCardStyles.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -22,7 +24,11 @@
       <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-navbar">
           <a class="navbar-brand" href="./index.html">
-            <img src="../../assets/Images/logo.png" alt="FrutifyLogo" height="24" />
+            <img
+              src="../../assets/Images/logo.png"
+              alt="FrutifyLogo"
+              height="24"
+            />
           </a>
           <div>
             <a class="nav-link" href="/index.html">Home</a>
@@ -49,25 +55,151 @@
       </nav>
     </header>
     <main id="main-content" class="container">
-      <p>Estoy probando el margen</p>
-      <img
-        src="../../assets/Images/cart_icon.png"
-        height="500px"
-        width="100%"
-        alt="Frutify"
-      />
-      <div>
-        <h1>Bienvenido a Frutify</h1>
-        <p>Tu tienda de comestibles en línea.</p>
-        <button class="btn btn-primary">Explorar</button>
-      </div>
-      <div>
-        <a class="card">
-          <img src="../../assets/Images/product1.jpg" alt="Producto 1" />
-          <h2>Producto 1</h2>
-          <p>$120</p>
+      <section class="product-details">
+        <img
+          class="product-image"
+          src="../../assets/Images/products/potatio-product-detail.png"
+          alt="Producto 1"
+        />
+        <div class="product-info">
+          <h2 class="product-title">Fresh Potatoes</h2>
+          <div class="product-details-container">
+            <h5 class="text-gray">Overview</h5>
+            <p>
+              Our fresh potatoes are locally sourced and guaranteed to be of the
+              highest quality. Grown with care, these potatoes are perfect for a
+              variety of culinary uses, from classic mashed potatoes to crispy
+              roasted dishes.
+            </p>
+          </div>
+          <div class="product-details-container">
+            <h5 class="text-gray">Unit of Measurement</h5>
+            <p>Kg (Kilogram)</p>
+          </div>
+          <div class="product-details-container">
+            <h5 class="text-red">Price</h5>
+            <div class="product-price">
+              <h4>$2500</h4>
+              <p>(x kg)</p>
+            </div>
+          </div>
+          <div class="product-details-container">
+            <h5 class="text-gray">Quantity</h5>
+            <div class="product-quantity">
+              <button>-</button>
+              <div class="quantity-value">
+                <h3>1</h3>
+                <p>x kg</p>
+              </div>
+              <button>+</button>
+            </div>
+          </div>
+          <button class="add-product">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <spam>Add to Cart</spam>
+          </button>
         </div>
-      </div>
+      </section>
+      <section class="more-products">
+        <h4>You may also like</h4>
+        <div class="conteiner-cards-products">
+          <a class="card-product" href="../Product-details">
+            <img
+              class="img-card"
+              src="../../assets/Images/products/tomate.png"
+              alt="Producto 1"
+            />
+            <p class="type-card">Fruta</p>
+            <h4 class="title-card">Tomate 1kg</h4>
+            <div class="card-price">
+              <div class="container-price">
+                <spam class="price-total"> $500 </spam>
+                <p class="price-deals">$120</p>
+              </div>
+              <button class="card-button">
+                <i class="fa-solid fa-cart-plus"></i>
+                <spam>Add</spam>
+              </button>
+            </div>
+          </a>
+          <a class="card-product" href="../Product-details">
+            <img
+              class="img-card"
+              src="../../assets/Images/products/brocoli.png"
+              alt="Producto 1"
+            />
+            <p class="type-card">Verdura</p>
+            <h4 class="title-card">Brocoli 1kg</h4>
+            <div class="card-price">
+              <div class="container-price">
+                <spam class="price-total"> $500 </spam>
+                <p class="price-deals">$120</p>
+              </div>
+              <button class="card-button">
+                <i class="fa-solid fa-cart-plus"></i>
+                <spam>Add</spam>
+              </button>
+            </div>
+          </a>
+          <a class="card-product" href="../Product-details">
+            <img
+              class="img-card"
+              src="../../assets/Images/products/choclo.png"
+              alt="Producto 1"
+            />
+            <p class="type-card">Verdura</p>
+            <h4 class="title-card">Choclo 1kg</h4>
+            <div class="card-price">
+              <div class="container-price">
+                <spam class="price-total"> $500 </spam>
+                <p class="price-deals">$120</p>
+              </div>
+              <button class="card-button">
+                <i class="fa-solid fa-cart-plus"></i>
+                <spam>Add</spam>
+              </button>
+            </div>
+          </a>
+          <a class="card-product" href="../Product-details">
+            <img
+              class="img-card"
+              src="../../assets/Images/products/esparago.png"
+              alt="Producto 1"
+            />
+            <p class="type-card">Verdura</p>
+            <h4 class="title-card">Esparago 1kg</h4>
+            <div class="card-price">
+              <div class="container-price">
+                <spam class="price-total"> $500 </spam>
+                <p class="price-deals">$120</p>
+              </div>
+              <button class="card-button">
+                <i class="fa-solid fa-cart-plus"></i>
+                <spam>Add</spam>
+              </button>
+            </div>
+          </a>
+          <a class="card-product" href="../Product-details">
+            <img
+              class="img-card"
+              src="../../assets/Images/products/papa.png"
+              alt="Producto 1"
+            />
+            <p class="type-card">Verdura</p>
+            <h4 class="title-card">Papa 1kg</h4>
+            <div class="card-price">
+              <div class="container-price">
+                <spam class="price-total"> $500 </spam>
+                <p class="price-deals">$120</p>
+              </div>
+              <button class="card-button">
+                <i class="fa-solid fa-cart-plus"></i>
+                <spam>Add</spam>
+              </button>
+            </div>
+          </a>
+        </div>
+      </section>
     </main>
     <footer>
       <div class="footer-container">
