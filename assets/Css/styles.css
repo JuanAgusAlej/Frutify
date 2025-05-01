@@ -14,6 +14,10 @@ body {
 header {
   margin-top: 60px;
 }
+.remove-pading-margin {
+  padding: 0;
+  margin: 0;
+}
 
 /* ------------NAVBAR------------ */
 .navbar {
@@ -52,6 +56,14 @@ header {
 
 .nav-link img {
   vertical-align: middle;
+}
+/* 
+----------------MAIN CONTENT---------------- */
+
+#main-content {
+  width: 98%;
+  padding-left: 1%;
+  padding-right: 1%;
 }
 
 /* ------------FOOTER------------ */
@@ -117,6 +129,9 @@ footer a {
   header {
     margin-top: 80px;
   }
+  body {
+    font-size: small;
+  }
   .navbar {
     padding: 10px;
   }
@@ -130,7 +145,9 @@ footer a {
     margin-right: 0;
     margin-bottom: 10px;
   }
+}
 
+@media (max-width: 640px) {
   footer {
     display: flex;
     align-items: center;
