@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../../assets/Css/styles.css" />
+    <link rel="stylesheet" href="../../assets/Css/User/styles.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -15,14 +16,18 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     />
 
-    <title>Document</title>
+    <title>Frutify</title>
   </head>
-  <body>
+  <body class="wrapper">
     <header>
       <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-navbar">
           <a class="navbar-brand" href="./index.html">
-            <img src="../../assets/Images/logo.png" alt="grobiteLogo" height="24" />
+            <img
+              src="../../assets/Images/logo.png"
+              alt="FrutifyLogo"
+              height="24"
+            />
           </a>
           <div>
             <a class="nav-link" href="/index.html">Home</a>
@@ -49,25 +54,77 @@
       </nav>
     </header>
     <main id="main-content" class="container">
-      <p>Estoy probando el margen</p>
-      <img
-        src="../../assets/Images/cart_icon.png"
-        height="500px"
-        width="100%"
-        alt="grobite"
-      />
-      <div>
-        <h1>Bienvenido a Grobite</h1>
-        <p>Tu tienda de comestibles en línea.</p>
-        <button class="btn btn-primary">Explorar</button>
-      </div>
-      <div>
-        <a class="card">
-          <img src="../../assets/Images/product1.jpg" alt="Producto 1" />
-          <h2>Producto 1</h2>
-          <p>$120</p>
+      <section class="container-user-acont">
+        <div class="box">
+          <h3 class="user-Profile">User Profile</h3>
+          <div class="user-Profile-data">
+            <h3>Name</h3>
+            <p>Juan Perez</p>
+          </div>
+          <div class="user-Profile-data">
+            <h3>Phone number</h3>
+            <p>+234-9087632103</p>
+          </div>
+          <div class="user-Profile-data">
+            <h3>Email Address</h3>
+            <p>sade.abim@yahoo.com</p>
+          </div>
+          <div class="user-Profile-data">
+            <h3>Address 1</h3>
+            <p>
+              House 17 Jerusalem Estate, Opp. Peck Shopping Mall. Warri, Delta
+              State.
+            </p>
+            <button class="btn-orange">update shipping address</button>
+          </div>
+          <div class="user-Profile-data">
+            <h3>Payment Method</h3>
+            <p>Debit Card</p>
+            <button class="btn-orange">update billing info</button>
+          </div>
+          <div class="user-Profile-data">
+            <h3>Saved Cards</h3>
+            <p>123* **** **** **09</p>
+          </div>
         </div>
-      </div>
+        <div class="box">
+          <div class="title-order-history">
+            <h3 class="order-history">Order History</h3>
+            <button class="btn-orange">View full history</button>
+          </div>
+          <div class="order-history-data">
+            <div>
+              <h3>Order ID</h3>
+              <p>1234567890</p>
+            </div>
+            <div>
+              <h3>$20.00</h3>
+              <p>15/05/2024</p>
+            </div>
+          </div>
+          <div class="order-history-data">
+            <div>
+              <h3>Order ID</h3>
+              <p>1234567890</p>
+            </div>
+            <div>
+              <h3>$20.00</h3>
+              <p>15/05/2024</p>
+            </div>
+          </div>
+          <div class="order-history-data">
+            <div>
+              <h3>Order ID</h3>
+              <p>1234567890</p>
+            </div>
+            <div>
+              <h3>$20.00</h3>
+              <p>15/05/2024</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <button class="btn-change-password">Change Password</button>
     </main>
     <footer>
       <div class="footer-container">
@@ -125,7 +182,7 @@
         </div>
       </div>
       <p class="footer-legal">
-        &copy; 2023 Grobite. Todos los derechos reservados.
+        &copy; 2023 Frutify. Todos los derechos reservados.
       </p>
     </footer>
   </body>

@@ -8,11 +8,20 @@ body {
   font-size: 16px;
   height: 100%;
   background-color: #f8f9fa;
-  margin-top: 25px;
 }
 
 header {
   margin-top: 60px;
+}
+.remove-pading-margin {
+  padding: 0;
+  margin: 0;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 /* ------------NAVBAR------------ */
@@ -53,12 +62,23 @@ header {
 .nav-link img {
   vertical-align: middle;
 }
+/* 
+----------------MAIN CONTENT---------------- */
+
+#main-content {
+  width: 98%;
+  padding-left: 1%;
+  padding-right: 1%;
+  padding-bottom: 2%;
+  flex: 1;
+}
 
 /* ------------FOOTER------------ */
 
 footer {
   background-color: #f6e2ab;
-  padding: 20px;
+  padding-inline: 20px;
+  padding-top: 20px;
   height: 200px;
 }
 .footer-container {
@@ -117,6 +137,9 @@ footer a {
   header {
     margin-top: 80px;
   }
+  body {
+    font-size: small;
+  }
   .navbar {
     padding: 10px;
   }
@@ -130,7 +153,9 @@ footer a {
     margin-right: 0;
     margin-bottom: 10px;
   }
+}
 
+@media (max-width: 640px) {
   footer {
     display: flex;
     align-items: center;

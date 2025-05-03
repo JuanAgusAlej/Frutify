@@ -1,0 +1,12 @@
+.container-banners {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+  border-radius: 20px;
+}
+
+.container-banners .banner {
+  width: 100%;
+  border-radius: 10px;
+  height: fit-content;
+}
