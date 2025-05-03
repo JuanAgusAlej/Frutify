@@ -1,0 +1,81 @@
+.container-user-acont {
+  width: 100%;
+  display: flex;
+  gap: 1%;
+  margin-bottom: 20px;
+}
+
+.box {
+  width: 50%;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  padding-inline: 20px;
+  padding-top: 10px;
+}
+
+.box * {
+  padding: 0;
+  margin: 0;
+}
+
+.user-Profile {
+  padding-bottom: 15px;
+  border-bottom: 1px solid #ddd;
+}
+
+.user-Profile-data,
+.order-history-data {
+  margin-block: 20px;
+  font-size: medium;
+}
+.order-history-data {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 10px;
+  border-bottom: 2px dotted #ddd;
+}
+.user-Profile-data h3,
+.order-history-data h3 {
+  color: #747171;
+}
+
+.user-Profile-data h3,
+.user-Profile-data p {
+  margin-bottom: 5px;
+}
+
+.btn-orange {
+  color: #df5a3d;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #df5a3d;
+  font-size: medium;
+}
+
+.title-order-history {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 15px;
+}
+
+.btn-change-password {
+  background-color: #253d4e;
+  border-radius: 10px;
+  color: white;
+  padding: 15px;
+  font-size: medium;
+}
+
+@media (max-width: 768px) {
+  .user-Profile-data,
+  .order-history-data {
+    margin-block: 20px;
+    font-size: small;
+  }
+  .btn-orange {
+    font-size: small;
+  }
+  .btn-change-password {
+    font-size: small;
+  }
+}
