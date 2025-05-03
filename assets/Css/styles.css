@@ -8,7 +8,6 @@ body {
   font-size: 16px;
   height: 100%;
   background-color: #f8f9fa;
-  margin-top: 25px;
 }
 
 header {
@@ -17,6 +16,12 @@ header {
 .remove-pading-margin {
   padding: 0;
   margin: 0;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 /* ------------NAVBAR------------ */
@@ -65,13 +70,15 @@ header {
   padding-left: 1%;
   padding-right: 1%;
   padding-bottom: 2%;
+  flex: 1;
 }
 
 /* ------------FOOTER------------ */
 
 footer {
   background-color: #f6e2ab;
-  padding: 20px;
+  padding-inline: 20px;
+  padding-top: 20px;
   height: 200px;
 }
 .footer-container {
