@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../../assets/Css/styles.css" />
+    <link rel="stylesheet" href="../../assets/Css/Cart/styles.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -22,10 +23,14 @@
       <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-navbar">
           <a class="navbar-brand" href="./index.html">
-            <img src="../../assets/Images/logo.png" alt="FrutifyLogo" height="24" />
+            <img
+              src="../../assets/Images/logo.png"
+              alt="FrutifyLogo"
+              height="24"
+            />
           </a>
           <div>
-            <a class="nav-link " href="/index.html">Home</a>
+            <a class="nav-link" href="/index.html">Home</a>
             <a class="nav-link" href="/Pages/Shop">Tienda</a>
             <a class="nav-link" href="/Pages/Deals">Ofertas</a>
             <a class="nav-link active" href="/Pages/Cart">
@@ -49,25 +54,123 @@
       </nav>
     </header>
     <main id="main-content" class="container">
-      <p>Estoy probando el margen</p>
-      <img
-        src="../../assets/Images/cart_icon.png"
-        height="500px"
-        width="100%"
-        alt="Frutify"
-      />
-      <div>
-        <h1>Bienvenido a Frutify</h1>
-        <p>Tu tienda de comestibles en línea.</p>
-        <button class="btn btn-primary">Explorar</button>
-      </div>
-      <div>
-        <a class="card">
-          <img src="../../assets/Images/product1.jpg" alt="Producto 1" />
-          <h2>Producto 1</h2>
-          <p>$120</p>
+      <section class="container">
+        <div class="container-title">
+          <h3>Shopping Cart</h3>
+          <p>You have 4 items in your cart</p>
         </div>
-      </div>
+      </section>
+      <section class="container">
+        <table class="table-cart">
+          <thead class="table-cart-header table-border-bottom">
+            <tr>
+              <th></th>
+              <th>Nombre</th>
+              <th>Unit</th>
+              <th>Price</th>
+              <th>Quantity</th>
+              <th>Total</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody class="table-cart-body table-border-bottom">
+            <tr>
+              <td>
+                <img
+                  src="../../assets/Images/products/brocoli.png"
+                  alt="product1"
+                />
+              </td>
+              <td>Producto 1</td>
+              <td>kg</td>
+              <td>$10.00</td>
+              <td>
+                <div class="container-quantity">
+                  <button class="btn-quantity">
+                    <i class="fa-solid fa-minus"></i>
+                  </button>
+                  <span>2</span>
+                  <button class="btn-quantity">
+                    <i class="fa-solid fa-plus"></i>
+                  </button>
+                </div>
+              </td>
+              <td>$20.00</td>
+              <td>
+                <button class="btn-remove">
+                  <i class="fa-solid fa-xmark"></i>
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src="../../assets/Images/products/brocoli.png"
+                  alt="product1"
+                />
+              </td>
+              <td>Producto 1</td>
+              <td>kg</td>
+              <td>$10.00</td>
+              <td>
+                <div class="container-quantity">
+                  <button class="btn-quantity">
+                    <i class="fa-solid fa-minus"></i>
+                  </button>
+                  <span>2</span>
+                  <button class="btn-quantity">
+                    <i class="fa-solid fa-plus"></i>
+                  </button>
+                </div>
+              </td>
+              <td>$20.00</td>
+              <td>
+                <button class="btn-remove">
+                  <i class="fa-solid fa-xmark"></i>
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src="../../assets/Images/products/brocoli.png"
+                  alt="product1"
+                />
+              </td>
+              <td>Producto 1</td>
+              <td>kg</td>
+              <td>$10.00</td>
+              <td>
+                <div class="container-quantity">
+                  <button class="btn-quantity">
+                    <i class="fa-solid fa-minus"></i>
+                  </button>
+                  <span>2</span>
+                  <button class="btn-quantity">
+                    <i class="fa-solid fa-plus"></i>
+                  </button>
+                </div>
+              </td>
+              <td>$20.00</td>
+              <td>
+                <button class="btn-remove">
+                  <i class="fa-solid fa-xmark"></i>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="container-total">
+          <div class="container-total-price">
+            <p>Total</p>
+            <h3>$20.00</h3>
+          </div>
+          <button class="btn-checkout">
+            <h4>Proceed to Checkout</h4>
+            <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </div>
+      </section>
     </main>
     <footer>
       <div class="footer-container">
