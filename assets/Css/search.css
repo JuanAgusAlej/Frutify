@@ -1,4 +1,5 @@
 .search-bar-container {
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -7,23 +8,27 @@
 .search-bar {
   display: flex;
   gap: 1%;
-  width: 50%;
   height: fit-content;
   padding: 5px;
+  justify-content: space-between;
 }
 
 .search-bar input {
-  width: 85%;
   border: 0.5px solid #ccc;
   padding: 5px;
   border-radius: 5px;
 }
 
 .search-bar button {
-  width: 15%;
   margin: 0;
   border: 0;
   border-radius: 5px;
   background-color: #1c4606;
   color: white;
+}
+@media screen and (max-width: 540px) {
+  .search-bar button,
+  .search-bar input {
+    width: auto;
+  }
 }

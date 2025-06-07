@@ -1,5 +1,4 @@
 .container {
-  padding-inline: 20px;
 }
 
 .conteiner-deals {
@@ -39,6 +38,7 @@
   flex-wrap: wrap;
   gap: 2%;
   margin-top: 2%;
+  justify-content: space-between;
 }
 
 .deal-card {
@@ -66,6 +66,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  padding: 10px;
 }
 
 .deal-card-info .deal-percentage {
@@ -106,4 +107,33 @@
   border-radius: 5px;
   cursor: pointer;
   margin-top: 5px;
+}
+
+@media screen and (max-width: 768px) {
+  .deal-card {
+    width: 45%;
+  }
+  .search-bar button,
+  .search-bar input {
+    width: auto;
+  }
+  /* .deals-cards {
+    flex-direction: column;
+  }
+  .deals-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .deals-header .time {
+    margin-top: 10px;
+  } */
+}
+
+@media screen and (max-width: 540px) {
+  .deal-card {
+    width: 100%;
+  }
+  .deal-card-info {
+    width: 100%;
+  }
 }
