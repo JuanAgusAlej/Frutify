@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../../assets/Css/styles.css" />
-    <link rel="stylesheet" href="../../assets/Css/styles.css" />
+    <link rel="stylesheet" href="../../assets/Css/search.css" />
     <link rel="stylesheet" href="../../assets/Css/Shop/styles.css" />
     <link rel="stylesheet" href="../../assets/Css/productCardStyles.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -57,51 +57,15 @@
     </header>
     <main id="main-content">
       <section class="container-shop">
-        <div
-          class="search-bar-container"
-          style="
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-          "
-        >
+        <div class="search-bar-container">
           <h3>Explore our Shop</h3>
           <form
             action="https://example.com/search"
             method="GET"
             class="search-bar"
-            style="
-              display: flex;
-              gap: 1%;
-              width: 50%;
-              height: fit-content;
-              padding: 5px;
-            "
           >
-            <input
-              style="
-                width: 85%;
-                border: 0.5px solid #ccc;
-                padding: 5px;
-                border-radius: 5px;
-              "
-              type="text"
-              placeholder="Buscar productos..."
-              class="search-input"
-            />
-            <button
-              style="
-                width: 15%;
-                margin: 0;
-                border: 0;
-                border-radius: 5px;
-                background-color: #1c4606;
-                color: white;
-              "
-              class="btn btn-primary"
-            >
-              Search
-            </button>
+            <input type="text" placeholder="Buscar productos..." />
+            <button>Search</button>
           </form>
         </div>
       </section>
@@ -387,6 +351,9 @@
       </section>
     </main>
     <footer>
+      <p class="footer-legal">
+        &copy; 2023 Frutify. Todos los derechos reservados.
+      </p>
       <div class="footer-container">
         <div class="footer-contact">
           <img
@@ -441,9 +408,6 @@
           </div>
         </div>
       </div>
-      <p class="footer-legal">
-        &copy; 2023 Frutify. Todos los derechos reservados.
-      </p>
     </footer>
   </body>
 </html>

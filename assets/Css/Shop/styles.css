@@ -1,5 +1,4 @@
 .container-shop {
-  padding-inline: 20px;
 }
 .container-filer-products {
   display: flex;
@@ -45,5 +44,11 @@
 @media (max-width: 768px) {
   .conteiner-filter {
     width: 30%;
+  }
+}
+
+@media (max-width: 540px) {
+  .conteiner-filter {
+    width: auto;
   }
 }
