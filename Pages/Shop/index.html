@@ -59,13 +59,13 @@
       <section class="container-shop">
         <div class="search-bar-container">
           <h3>Explore our Shop</h3>
-          <form
-            action="https://example.com/search"
-            method="GET"
-            class="search-bar"
-          >
-            <input type="text" placeholder="Buscar productos..." />
-            <button>Search</button>
+          <form class="search-bar" id="shopSearchForm">
+            <input
+              type="text"
+              name="search"
+              placeholder="Buscar productos..."
+            />
+            <button type="submit">Search</button>
           </form>
         </div>
       </section>
@@ -74,278 +74,21 @@
           <div class="conteiner-filter">
             <div class="box-filter">
               <h3 class="remove-pading-margin">Filters</h3>
-              <span class="filter-select"> Vegetales </span>
+              <div id="filter-container"></div>
             </div>
             <div class="box-filter">
               <div class="filter-categories-title">
                 <h3 class="remove-pading-margin">Categories</h3>
                 <i class="fa-solid fa-chevron-down"></i>
               </div>
-              <ul class="filter-list remove-pading-margin">
-                <li>
-                  Frutas
-                  <input type="radio" name="category" value="fruits" />
-                </li>
-                <li>
-                  Verduras
-                  <input type="radio" name="category" value="vegetables" />
-                </li>
-                <li>
-                  Lácteos
-                  <input type="radio" name="category" value="dairy" />
-                </li>
-                <li>
-                  Carnes
-                  <input type="radio" name="category" value="meat" />
-                </li>
-              </ul>
-            </div>
-            <div class="box-filter">
-              <div class="filter-categories-title">
-                <h3 class="remove-pading-margin">Availability</h3>
-                <i class="fa-solid fa-chevron-down"></i>
-              </div>
-              <ul class="filter-list remove-pading-margin">
-                <li>
-                  In-stock
-                  <input type="radio" name="category" value="dairy" />
-                </li>
-                <li>
-                  Out-of-stock
-                  <input type="radio" name="category" value="meat" />
-                </li>
-              </ul>
-            </div>
-            <div class="box-filter">
-              <div class="filter-categories-title">
-                <h3 class="remove-pading-margin">Prices</h3>
-                <i class="fa-solid fa-chevron-down"></i>
-              </div>
-              <ul class="filter-list remove-pading-margin">
-                <li>
-                  Sales
-                  <input type="radio" name="category" value="dairy" />
-                </li>
-                <li>
-                  Discounted
-                  <input type="radio" name="category" value="meat" />
-                </li>
-              </ul>
-            </div>
-            <div class="box-filter">
-              <div class="filter-categories-title">
-                <h3 class="remove-pading-margin">Diet Type</h3>
-                <i class="fa-solid fa-chevron-down"></i>
-              </div>
-              <ul class="filter-list remove-pading-margin">
-                <li>
-                  Vegan
-                  <input type="radio" name="category" value="dairy" />
-                </li>
-                <li>
-                  Non-vegan
-                  <input type="radio" name="category" value="meat" />
-                </li>
-              </ul>
+              <ul class="filter-list remove-pading-margin"></ul>
             </div>
           </div>
           <div class="container-products">
             <div class="header-cards-container">
               <h3 class="remove-pading-margin">Productos destacados</h3>
             </div>
-            <div class="conteiner-cards-products">
-              <a class="card-product" href="../Product-details">
-                <img
-                  class="img-card"
-                  src="../../assets/Images/products/tomate.png"
-                  alt="Producto 1"
-                />
-                <p class="type-card">Fruta</p>
-                <h4 class="title-card">Tomate 1kg</h4>
-                <div class="card-price">
-                  <div class="container-price">
-                    <spam class="price-total"> $500 </spam>
-                    <p class="price-deals">$120</p>
-                  </div>
-                  <button class="card-button">
-                    <i class="fa-solid fa-cart-plus"></i>
-                    <spam>Add</spam>
-                  </button>
-                </div>
-              </a>
-              <a class="card-product" href="../Product-details">
-                <img
-                  class="img-card"
-                  class="img-card"
-                  src="../../assets/Images/products/tomate.png"
-                  alt="Producto 1"
-                />
-                <p class="type-card">Fruta</p>
-                <h4 class="title-card">Tomate 1kg</h4>
-                <div class="card-price">
-                  <div class="container-price">
-                    <spam class="price-total"> $500 </spam>
-                    <p class="price-deals">$120</p>
-                  </div>
-                  <button class="card-button">
-                    <i class="fa-solid fa-cart-plus"></i>
-                    <spam>Add</spam>
-                  </button>
-                </div>
-              </a>
-              <a class="card-product" href="../Product-details">
-                <img
-                  class="img-card"
-                  src="../../assets/Images/products/tomate.png"
-                  alt="Producto 1"
-                />
-                <p class="type-card">Fruta</p>
-                <h4 class="title-card">Tomate 1kg</h4>
-                <div class="card-price">
-                  <div class="container-price">
-                    <spam class="price-total"> $500 </spam>
-                    <p class="price-deals">$120</p>
-                  </div>
-                  <button class="card-button">
-                    <i class="fa-solid fa-cart-plus"></i>
-                    <spam>Add</spam>
-                  </button>
-                </div>
-              </a>
-              <a class="card-product" href="../Product-details">
-                <img
-                  class="img-card"
-                  src="../../assets/Images/products/tomate.png"
-                  alt="Producto 1"
-                />
-                <p class="type-card">Fruta</p>
-                <h4 class="title-card">Tomate 1kg</h4>
-                <div class="card-price">
-                  <div class="container-price">
-                    <spam class="price-total"> $500 </spam>
-                    <p class="price-deals">$120</p>
-                  </div>
-                  <button class="card-button">
-                    <i class="fa-solid fa-cart-plus"></i>
-                    <spam>Add</spam>
-                  </button>
-                </div>
-              </a>
-              <a class="card-product" href="../Product-details">
-                <img
-                  class="img-card"
-                  src="../../assets/Images/products/tomate.png"
-                  alt="Producto 1"
-                />
-                <p class="type-card">Fruta</p>
-                <h4 class="title-card">Tomate 1kg</h4>
-                <div class="card-price">
-                  <div class="container-price">
-                    <spam class="price-total"> $500 </spam>
-                    <p class="price-deals">$120</p>
-                  </div>
-                  <button class="card-button">
-                    <i class="fa-solid fa-cart-plus"></i>
-                    <spam>Add</spam>
-                  </button>
-                </div>
-              </a>
-              <a class="card-product" href="../Product-details">
-                <img
-                  class="img-card"
-                  src="../../assets/Images/products/tomate.png"
-                  alt="Producto 1"
-                />
-                <p class="type-card">Fruta</p>
-                <h4 class="title-card">Tomate 1kg</h4>
-                <div class="card-price">
-                  <div class="container-price">
-                    <spam class="price-total"> $500 </spam>
-                    <p class="price-deals">$120</p>
-                  </div>
-                  <button class="card-button">
-                    <i class="fa-solid fa-cart-plus"></i>
-                    <spam>Add</spam>
-                  </button>
-                </div>
-              </a>
-              <a class="card-product" href="../Product-details">
-                <img
-                  class="img-card"
-                  src="../../assets/Images/products/tomate.png"
-                  alt="Producto 1"
-                />
-                <p class="type-card">Fruta</p>
-                <h4 class="title-card">Tomate 1kg</h4>
-                <div class="card-price">
-                  <div class="container-price">
-                    <spam class="price-total"> $500 </spam>
-                    <p class="price-deals">$120</p>
-                  </div>
-                  <button class="card-button">
-                    <i class="fa-solid fa-cart-plus"></i>
-                    <spam>Add</spam>
-                  </button>
-                </div>
-              </a>
-              <a class="card-product" href="../Product-details">
-                <img
-                  class="img-card"
-                  src="../../assets/Images/products/tomate.png"
-                  alt="Producto 1"
-                />
-                <p class="type-card">Fruta</p>
-                <h4 class="title-card">Tomate 1kg</h4>
-                <div class="card-price">
-                  <div class="container-price">
-                    <spam class="price-total"> $500 </spam>
-                    <p class="price-deals">$120</p>
-                  </div>
-                  <button class="card-button">
-                    <i class="fa-solid fa-cart-plus"></i>
-                    <spam>Add</spam>
-                  </button>
-                </div>
-              </a>
-              <a class="card-product" href="../Product-details">
-                <img
-                  class="img-card"
-                  src="../../assets/Images/products/tomate.png"
-                  alt="Producto 1"
-                />
-                <p class="type-card">Fruta</p>
-                <h4 class="title-card">Tomate 1kg</h4>
-                <div class="card-price">
-                  <div class="container-price">
-                    <spam class="price-total"> $500 </spam>
-                    <p class="price-deals">$120</p>
-                  </div>
-                  <button class="card-button">
-                    <i class="fa-solid fa-cart-plus"></i>
-                    <spam>Add</spam>
-                  </button>
-                </div>
-              </a>
-              <a class="card-product" href="../Product-details">
-                <img
-                  class="img-card"
-                  src="../../assets/Images/products/tomate.png"
-                  alt="Producto 1"
-                />
-                <p class="type-card">Fruta</p>
-                <h4 class="title-card">Tomate 1kg</h4>
-                <div class="card-price">
-                  <div class="container-price">
-                    <spam class="price-total"> $500 </spam>
-                    <p class="price-deals">$120</p>
-                  </div>
-                  <button class="card-button">
-                    <i class="fa-solid fa-cart-plus"></i>
-                    <spam>Add</spam>
-                  </button>
-                </div>
-              </a>
-            </div>
+            <div id="container-products" class="conteiner-cards-products"></div>
           </div>
         </div>
       </section>
@@ -409,5 +152,9 @@
         </div>
       </div>
     </footer>
+
+    <!-- Scripts -->
+    <script type="module" src="../../assets/js/main.js"></script>
+    <script type="module" src="../../assets/js/pages/shop.js"></script>
   </body>
 </html>

@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="./assets/Css/productCardStyles.css" />
     <link rel="stylesheet" href="./assets/Css/home/searchStyles.css" />
     <link rel="stylesheet" href="./assets/Css/home/bannersStyles.css" />
+    <link rel="stylesheet" href="./assets/Css/home/buttonStyles.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -61,25 +62,9 @@
             Fresh fruits and vegetables, packaged goods, snacks, beverages,
             household essentials.
           </p>
-          <form
-            class="form-search"
-            action="https://example.com/search"
-            method="GET"
-          >
-            <input
-              class="input-search"
-              type="text"
-              name="search"
-              placeholder="Search for item..."
-              required
-            />
-            <button class="button-search" type="submit">
-              <i class="fa-solid fa-magnifying-glass"></i>
-            </button>
-          </form>
           <button
             class="button-go-to-shop"
-            onclick="window.location.href='/Pages/Shop';"
+            onclick="window.location.href='/Pages/Shop'"
           >
             <p class="text-go-to-shop">
               Tienda ahora <i class="fa-solid fa-arrow-right"></i>
@@ -91,236 +76,16 @@
       <section class="container-products">
         <div class="header-cards-container">
           <h4>Productos destacados</h4>
-          <div style="display: flex; gap: 10px; height: fit-content">
-            <button
-              style="
-                padding: 5px;
-                border: none;
-                border-radius: 20px;
-                background-color: #000;
-                color: #f6e2ab;
-              "
-            >
-              Populares
-            </button>
-            <button
-              style="
-                padding: 5px;
-
-                border: none;
-                border-radius: 20px;
-                background-color: #fff;
-                color: #000;
-              "
-            >
-              Nuevos
-            </button>
-            <button
-              style="
-                padding: 5px;
-                border: none;
-                border-radius: 20px;
-                background-color: #fff;
-                color: #000;
-              "
-            >
-              Ofertas
-            </button>
+          <div class="button-group">
+            <button class="filter-button active">Populares</button>
+            <button class="filter-button">Nuevos</button>
+            <button class="filter-button">Ofertas</button>
           </div>
         </div>
-        <div class="conteiner-cards-products">
-          <a class="card-product" href="./Pages/Product-details">
-            <img
-              class="img-card"
-              src="./assets/Images/products/tomate.png"
-              alt="Producto 1"
-            />
-            <p class="type-card">Fruta</p>
-            <h4 class="title-card">Tomate 1kg</h4>
-            <div class="card-price">
-              <div class="container-price">
-                <spam class="price-total"> $500 </spam>
-                <p class="price-deals">$120</p>
-              </div>
-              <button class="card-button">
-                <i class="fa-solid fa-cart-plus"></i>
-                <spam>Add</spam>
-              </button>
-            </div>
-          </a>
-          <a class="card-product" href="./Pages/Product-details">
-            <img
-              class="img-card"
-              class="img-card"
-              src="./assets/Images/products/tomate.png"
-              alt="Producto 1"
-            />
-            <p class="type-card">Fruta</p>
-            <h4 class="title-card">Tomate 1kg</h4>
-            <div class="card-price">
-              <div class="container-price">
-                <spam class="price-total"> $500 </spam>
-                <p class="price-deals">$120</p>
-              </div>
-              <button class="card-button">
-                <i class="fa-solid fa-cart-plus"></i>
-                <spam>Add</spam>
-              </button>
-            </div>
-          </a>
-          <a class="card-product" href="./Pages/Product-details">
-            <img
-              class="img-card"
-              src="./assets/Images/products/tomate.png"
-              alt="Producto 1"
-            />
-            <p class="type-card">Fruta</p>
-            <h4 class="title-card">Tomate 1kg</h4>
-            <div class="card-price">
-              <div class="container-price">
-                <spam class="price-total"> $500 </spam>
-                <p class="price-deals">$120</p>
-              </div>
-              <button class="card-button">
-                <i class="fa-solid fa-cart-plus"></i>
-                <spam>Add</spam>
-              </button>
-            </div>
-          </a>
-          <a class="card-product" href="./Pages/Product-details">
-            <img
-              class="img-card"
-              src="./assets/Images/products/tomate.png"
-              alt="Producto 1"
-            />
-            <p class="type-card">Fruta</p>
-            <h4 class="title-card">Tomate 1kg</h4>
-            <div class="card-price">
-              <div class="container-price">
-                <spam class="price-total"> $500 </spam>
-                <p class="price-deals">$120</p>
-              </div>
-              <button class="card-button">
-                <i class="fa-solid fa-cart-plus"></i>
-                <spam>Add</spam>
-              </button>
-            </div>
-          </a>
-          <a class="card-product" href="./Pages/Product-details">
-            <img
-              class="img-card"
-              src="./assets/Images/products/tomate.png"
-              alt="Producto 1"
-            />
-            <p class="type-card">Fruta</p>
-            <h4 class="title-card">Tomate 1kg</h4>
-            <div class="card-price">
-              <div class="container-price">
-                <spam class="price-total"> $500 </spam>
-                <p class="price-deals">$120</p>
-              </div>
-              <button class="card-button">
-                <i class="fa-solid fa-cart-plus"></i>
-                <spam>Add</spam>
-              </button>
-            </div>
-          </a>
-          <a class="card-product" href="./Pages/Product-details">
-            <img
-              class="img-card"
-              src="./assets/Images/products/tomate.png"
-              alt="Producto 1"
-            />
-            <p class="type-card">Fruta</p>
-            <h4 class="title-card">Tomate 1kg</h4>
-            <div class="card-price">
-              <div class="container-price">
-                <spam class="price-total"> $500 </spam>
-                <p class="price-deals">$120</p>
-              </div>
-              <button class="card-button">
-                <i class="fa-solid fa-cart-plus"></i>
-                <spam>Add</spam>
-              </button>
-            </div>
-          </a>
-          <a class="card-product" href="./Pages/Product-details">
-            <img
-              class="img-card"
-              src="./assets/Images/products/tomate.png"
-              alt="Producto 1"
-            />
-            <p class="type-card">Fruta</p>
-            <h4 class="title-card">Tomate 1kg</h4>
-            <div class="card-price">
-              <div class="container-price">
-                <spam class="price-total"> $500 </spam>
-                <p class="price-deals">$120</p>
-              </div>
-              <button class="card-button">
-                <i class="fa-solid fa-cart-plus"></i>
-                <spam>Add</spam>
-              </button>
-            </div>
-          </a>
-          <a class="card-product" href="./Pages/Product-details">
-            <img
-              class="img-card"
-              src="./assets/Images/products/tomate.png"
-              alt="Producto 1"
-            />
-            <p class="type-card">Fruta</p>
-            <h4 class="title-card">Tomate 1kg</h4>
-            <div class="card-price">
-              <div class="container-price">
-                <spam class="price-total"> $500 </spam>
-                <p class="price-deals">$120</p>
-              </div>
-              <button class="card-button">
-                <i class="fa-solid fa-cart-plus"></i>
-                <spam>Add</spam>
-              </button>
-            </div>
-          </a>
-          <a class="card-product" href="./Pages/Product-details">
-            <img
-              class="img-card"
-              src="./assets/Images/products/tomate.png"
-              alt="Producto 1"
-            />
-            <p class="type-card">Fruta</p>
-            <h4 class="title-card">Tomate 1kg</h4>
-            <div class="card-price">
-              <div class="container-price">
-                <spam class="price-total"> $500 </spam>
-                <p class="price-deals">$120</p>
-              </div>
-              <button class="card-button">
-                <i class="fa-solid fa-cart-plus"></i>
-                <spam>Add</spam>
-              </button>
-            </div>
-          </a>
-          <a class="card-product" href="./Pages/Product-details">
-            <img
-              class="img-card"
-              src="./assets/Images/products/tomate.png"
-              alt="Producto 1"
-            />
-            <p class="type-card">Fruta</p>
-            <h4 class="title-card">Tomate 1kg</h4>
-            <div class="card-price">
-              <div class="container-price">
-                <spam class="price-total"> $500 </spam>
-                <p class="price-deals">$120</p>
-              </div>
-              <button class="card-button">
-                <i class="fa-solid fa-cart-plus"></i>
-                <spam>Add</spam>
-              </button>
-            </div>
-          </a>
-        </div>
+        <div
+          class="conteiner-cards-products"
+          id="conteiner-cards-products-home"
+        ></div>
       </section>
 
       <section class="display-off">
@@ -408,5 +173,7 @@
         </div>
       </div>
     </footer>
+
+    <script type="module" src="./assets/js/pages/home.js"></script>
   </body>
 </html>
