@@ -79,3 +79,23 @@
     font-size: small;
   }
 }
+
+@media screen and (max-width: 540px) {
+  .container-user-acont {
+    flex-direction: column;
+  }
+  .box {
+    width: auto;
+    margin-bottom: 15px;
+  }
+  /*.user-Profile-data,
+  .order-history-data {
+    font-size: small;
+  }
+  .btn-orange {
+    font-size: small;
+  }
+  .btn-change-password {
+    font-size: small;
+  } */
+}

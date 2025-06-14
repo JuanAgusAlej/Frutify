@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../../assets/Css/styles.css" />
-    <link rel="stylesheet" href="../../assets/Css/styles.css" />
+    <link rel="stylesheet" href="../../assets/Css/search.css" />
     <link rel="stylesheet" href="../../assets/Css/Shop/styles.css" />
     <link rel="stylesheet" href="../../assets/Css/productCardStyles.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -57,51 +57,15 @@
     </header>
     <main id="main-content">
       <section class="container-shop">
-        <div
-          class="search-bar-container"
-          style="
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-          "
-        >
+        <div class="search-bar-container">
           <h3>Explore our Shop</h3>
-          <form
-            action="https://example.com/search"
-            method="GET"
-            class="search-bar"
-            style="
-              display: flex;
-              gap: 1%;
-              width: 50%;
-              height: fit-content;
-              padding: 5px;
-            "
-          >
+          <form class="search-bar" id="shopSearchForm">
             <input
-              style="
-                width: 85%;
-                border: 0.5px solid #ccc;
-                padding: 5px;
-                border-radius: 5px;
-              "
               type="text"
+              name="search"
               placeholder="Buscar productos..."
-              class="search-input"
             />
-            <button
-              style="
-                width: 15%;
-                margin: 0;
-                border: 0;
-                border-radius: 5px;
-                background-color: #1c4606;
-                color: white;
-              "
-              class="btn btn-primary"
-            >
-              Search
-            </button>
+            <button type="submit">Search</button>
           </form>
         </div>
       </section>
@@ -110,283 +74,29 @@
           <div class="conteiner-filter">
             <div class="box-filter">
               <h3 class="remove-pading-margin">Filters</h3>
-              <span class="filter-select"> Vegetales </span>
+              <div id="filter-container"></div>
             </div>
             <div class="box-filter">
               <div class="filter-categories-title">
                 <h3 class="remove-pading-margin">Categories</h3>
                 <i class="fa-solid fa-chevron-down"></i>
               </div>
-              <ul class="filter-list remove-pading-margin">
-                <li>
-                  Frutas
-                  <input type="radio" name="category" value="fruits" />
-                </li>
-                <li>
-                  Verduras
-                  <input type="radio" name="category" value="vegetables" />
-                </li>
-                <li>
-                  Lácteos
-                  <input type="radio" name="category" value="dairy" />
-                </li>
-                <li>
-                  Carnes
-                  <input type="radio" name="category" value="meat" />
-                </li>
-              </ul>
-            </div>
-            <div class="box-filter">
-              <div class="filter-categories-title">
-                <h3 class="remove-pading-margin">Availability</h3>
-                <i class="fa-solid fa-chevron-down"></i>
-              </div>
-              <ul class="filter-list remove-pading-margin">
-                <li>
-                  In-stock
-                  <input type="radio" name="category" value="dairy" />
-                </li>
-                <li>
-                  Out-of-stock
-                  <input type="radio" name="category" value="meat" />
-                </li>
-              </ul>
-            </div>
-            <div class="box-filter">
-              <div class="filter-categories-title">
-                <h3 class="remove-pading-margin">Prices</h3>
-                <i class="fa-solid fa-chevron-down"></i>
-              </div>
-              <ul class="filter-list remove-pading-margin">
-                <li>
-                  Sales
-                  <input type="radio" name="category" value="dairy" />
-                </li>
-                <li>
-                  Discounted
-                  <input type="radio" name="category" value="meat" />
-                </li>
-              </ul>
-            </div>
-            <div class="box-filter">
-              <div class="filter-categories-title">
-                <h3 class="remove-pading-margin">Diet Type</h3>
-                <i class="fa-solid fa-chevron-down"></i>
-              </div>
-              <ul class="filter-list remove-pading-margin">
-                <li>
-                  Vegan
-                  <input type="radio" name="category" value="dairy" />
-                </li>
-                <li>
-                  Non-vegan
-                  <input type="radio" name="category" value="meat" />
-                </li>
-              </ul>
+              <ul class="filter-list remove-pading-margin"></ul>
             </div>
           </div>
           <div class="container-products">
             <div class="header-cards-container">
               <h3 class="remove-pading-margin">Productos destacados</h3>
             </div>
-            <div class="conteiner-cards-products">
-              <a class="card-product" href="../Product-details">
-                <img
-                  class="img-card"
-                  src="../../assets/Images/products/tomate.png"
-                  alt="Producto 1"
-                />
-                <p class="type-card">Fruta</p>
-                <h4 class="title-card">Tomate 1kg</h4>
-                <div class="card-price">
-                  <div class="container-price">
-                    <spam class="price-total"> $500 </spam>
-                    <p class="price-deals">$120</p>
-                  </div>
-                  <button class="card-button">
-                    <i class="fa-solid fa-cart-plus"></i>
-                    <spam>Add</spam>
-                  </button>
-                </div>
-              </a>
-              <a class="card-product" href="../Product-details">
-                <img
-                  class="img-card"
-                  class="img-card"
-                  src="../../assets/Images/products/tomate.png"
-                  alt="Producto 1"
-                />
-                <p class="type-card">Fruta</p>
-                <h4 class="title-card">Tomate 1kg</h4>
-                <div class="card-price">
-                  <div class="container-price">
-                    <spam class="price-total"> $500 </spam>
-                    <p class="price-deals">$120</p>
-                  </div>
-                  <button class="card-button">
-                    <i class="fa-solid fa-cart-plus"></i>
-                    <spam>Add</spam>
-                  </button>
-                </div>
-              </a>
-              <a class="card-product" href="../Product-details">
-                <img
-                  class="img-card"
-                  src="../../assets/Images/products/tomate.png"
-                  alt="Producto 1"
-                />
-                <p class="type-card">Fruta</p>
-                <h4 class="title-card">Tomate 1kg</h4>
-                <div class="card-price">
-                  <div class="container-price">
-                    <spam class="price-total"> $500 </spam>
-                    <p class="price-deals">$120</p>
-                  </div>
-                  <button class="card-button">
-                    <i class="fa-solid fa-cart-plus"></i>
-                    <spam>Add</spam>
-                  </button>
-                </div>
-              </a>
-              <a class="card-product" href="../Product-details">
-                <img
-                  class="img-card"
-                  src="../../assets/Images/products/tomate.png"
-                  alt="Producto 1"
-                />
-                <p class="type-card">Fruta</p>
-                <h4 class="title-card">Tomate 1kg</h4>
-                <div class="card-price">
-                  <div class="container-price">
-                    <spam class="price-total"> $500 </spam>
-                    <p class="price-deals">$120</p>
-                  </div>
-                  <button class="card-button">
-                    <i class="fa-solid fa-cart-plus"></i>
-                    <spam>Add</spam>
-                  </button>
-                </div>
-              </a>
-              <a class="card-product" href="../Product-details">
-                <img
-                  class="img-card"
-                  src="../../assets/Images/products/tomate.png"
-                  alt="Producto 1"
-                />
-                <p class="type-card">Fruta</p>
-                <h4 class="title-card">Tomate 1kg</h4>
-                <div class="card-price">
-                  <div class="container-price">
-                    <spam class="price-total"> $500 </spam>
-                    <p class="price-deals">$120</p>
-                  </div>
-                  <button class="card-button">
-                    <i class="fa-solid fa-cart-plus"></i>
-                    <spam>Add</spam>
-                  </button>
-                </div>
-              </a>
-              <a class="card-product" href="../Product-details">
-                <img
-                  class="img-card"
-                  src="../../assets/Images/products/tomate.png"
-                  alt="Producto 1"
-                />
-                <p class="type-card">Fruta</p>
-                <h4 class="title-card">Tomate 1kg</h4>
-                <div class="card-price">
-                  <div class="container-price">
-                    <spam class="price-total"> $500 </spam>
-                    <p class="price-deals">$120</p>
-                  </div>
-                  <button class="card-button">
-                    <i class="fa-solid fa-cart-plus"></i>
-                    <spam>Add</spam>
-                  </button>
-                </div>
-              </a>
-              <a class="card-product" href="../Product-details">
-                <img
-                  class="img-card"
-                  src="../../assets/Images/products/tomate.png"
-                  alt="Producto 1"
-                />
-                <p class="type-card">Fruta</p>
-                <h4 class="title-card">Tomate 1kg</h4>
-                <div class="card-price">
-                  <div class="container-price">
-                    <spam class="price-total"> $500 </spam>
-                    <p class="price-deals">$120</p>
-                  </div>
-                  <button class="card-button">
-                    <i class="fa-solid fa-cart-plus"></i>
-                    <spam>Add</spam>
-                  </button>
-                </div>
-              </a>
-              <a class="card-product" href="../Product-details">
-                <img
-                  class="img-card"
-                  src="../../assets/Images/products/tomate.png"
-                  alt="Producto 1"
-                />
-                <p class="type-card">Fruta</p>
-                <h4 class="title-card">Tomate 1kg</h4>
-                <div class="card-price">
-                  <div class="container-price">
-                    <spam class="price-total"> $500 </spam>
-                    <p class="price-deals">$120</p>
-                  </div>
-                  <button class="card-button">
-                    <i class="fa-solid fa-cart-plus"></i>
-                    <spam>Add</spam>
-                  </button>
-                </div>
-              </a>
-              <a class="card-product" href="../Product-details">
-                <img
-                  class="img-card"
-                  src="../../assets/Images/products/tomate.png"
-                  alt="Producto 1"
-                />
-                <p class="type-card">Fruta</p>
-                <h4 class="title-card">Tomate 1kg</h4>
-                <div class="card-price">
-                  <div class="container-price">
-                    <spam class="price-total"> $500 </spam>
-                    <p class="price-deals">$120</p>
-                  </div>
-                  <button class="card-button">
-                    <i class="fa-solid fa-cart-plus"></i>
-                    <spam>Add</spam>
-                  </button>
-                </div>
-              </a>
-              <a class="card-product" href="../Product-details">
-                <img
-                  class="img-card"
-                  src="../../assets/Images/products/tomate.png"
-                  alt="Producto 1"
-                />
-                <p class="type-card">Fruta</p>
-                <h4 class="title-card">Tomate 1kg</h4>
-                <div class="card-price">
-                  <div class="container-price">
-                    <spam class="price-total"> $500 </spam>
-                    <p class="price-deals">$120</p>
-                  </div>
-                  <button class="card-button">
-                    <i class="fa-solid fa-cart-plus"></i>
-                    <spam>Add</spam>
-                  </button>
-                </div>
-              </a>
-            </div>
+            <div id="container-products" class="conteiner-cards-products"></div>
           </div>
         </div>
       </section>
     </main>
     <footer>
+      <p class="footer-legal">
+        &copy; 2023 Frutify. Todos los derechos reservados.
+      </p>
       <div class="footer-container">
         <div class="footer-contact">
           <img
@@ -441,9 +151,10 @@
           </div>
         </div>
       </div>
-      <p class="footer-legal">
-        &copy; 2023 Frutify. Todos los derechos reservados.
-      </p>
     </footer>
+
+    <!-- Scripts -->
+    <script type="module" src="../../assets/js/main.js"></script>
+    <script type="module" src="../../assets/js/pages/shop.js"></script>
   </body>
 </html>
