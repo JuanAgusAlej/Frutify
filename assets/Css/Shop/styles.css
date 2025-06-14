@@ -16,10 +16,16 @@
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  margin-block: 15px;
+  margin-bottom: 15px;
 }
 .box-filter .filter-select {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   color: #747171;
+}
+.delete-filter {
+  cursor: pointer;
 }
 
 .filter-categories-title {

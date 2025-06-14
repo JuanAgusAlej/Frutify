@@ -1,0 +1,34 @@
+.filter-button {
+  padding: 5px;
+  border: none;
+  border-radius: 20px;
+  background-color: #fff;
+  color: #000;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.filter-button.active {
+  background-color: #000;
+  color: #f6e2ab;
+}
+
+.filter-button:disabled {
+  background-color: #e0e0e0;
+  color: #999;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.header-cards-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.header-cards-container .button-group {
+  display: flex;
+  gap: 10px;
+  height: fit-content;
+}
