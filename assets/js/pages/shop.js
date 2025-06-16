@@ -114,7 +114,7 @@ async function loadProducts() {
       }
     }
 
-    let endpoint = "/products?limit=12";
+    let endpoint = "/products?limit=24";
     if (searchTerm) {
       endpoint = `/products/search?q=${encodeURIComponent(searchTerm)}`;
     } else if (categorySlug) {
@@ -150,7 +150,7 @@ async function loadProducts() {
         title: product.title,
         price: product.price,
         originalPrice: product.price * 1.2,
-        link: `./Product-details?id=${product.id}`,
+        link: `../Product-details?id=${product.id}`,
       });
       container.innerHTML += cardHTML;
     });
