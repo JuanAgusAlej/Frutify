@@ -51,6 +51,7 @@
   width: 30%;
   height: 150px;
   margin-bottom: 2%;
+  text-decoration: none;
 }
 
 .deal-card * {

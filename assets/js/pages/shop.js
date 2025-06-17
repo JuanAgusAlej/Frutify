@@ -144,13 +144,15 @@ async function loadProducts() {
     }
 
     products.forEach((product) => {
+      const originalPrice =
+        product.price / (1 - product.discountPercentage / 100);
       const cardHTML = createProductCard({
         image: product.thumbnail,
         type: product.category,
         title: product.title,
-        price: product.price,
-        originalPrice: product.price * 1.2,
-        link: `../Product-details?id=${product.id}`,
+        price: originalPrice,
+        discountPercentage: product.discountPercentage,
+        link: `../Product-details/?id=${product.id}`,
       });
       container.innerHTML += cardHTML;
     });
