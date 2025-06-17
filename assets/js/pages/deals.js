@@ -21,7 +21,8 @@ async function loadDealsProducts() {
         type: product.category,
         title: product.title,
         price: product.price,
-        originalPrice: product.price * 1.2,
+        link: `../Product-details/?id=${product.id}`,
+        discountPercentage: product.discountPercentage,
       });
       container.innerHTML += cardHTML;
     });
