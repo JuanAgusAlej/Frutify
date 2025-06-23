@@ -44,8 +44,16 @@ header {
 .navbar-brand img {
   max-height: 40px;
 }
+.container-navbar div {
+  display: flex;
+  margin-right: 25px;
+  column-gap: 25px;
+}
 
 .navbar .nav-link {
+  display: flex;
+  align-items: center;
+  column-gap: 5px;
   color: #333;
   font-weight: 500;
   margin-right: 24px;
@@ -74,12 +82,12 @@ header {
 }
 
 .loader {
-  border: 4px solid #f3f3f3; /* Light grey */
-  border-top: 4px solid #3498db; /* Blue */
+  border: 3px solid #ccc;
+  border-top: 3px solid #df5a3d;
   border-radius: 50%;
-  width: 25px;
-  height: 25px;
-  animation: spin 2s linear infinite;
+  width: 20px;
+  height: 20px;
+  animation: spin 1s linear infinite;
 }
 
 .conteiner-loader {
