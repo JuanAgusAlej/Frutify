@@ -44,8 +44,8 @@
                 width="30"
                 height="24"
             /></a>
-            <a class="nav-link" href="/Pages/User/"
-              >Login
+            <a class="nav-link" id="auth-navbar" href="/Pages/User/"
+              ><p >Login</p>
               <img
                 src="../../assets/Images/login.png"
                 alt="Login"
@@ -78,25 +78,7 @@
         </div>
 
       </section>
-      <section  class="display-off">
-
-        <div class="container-banners">
-          <a href="../Shop">
-            <img
-              class="banner"
-              src="../../assets/Images/banners/Delivery.png"
-              alt="Banner Delivery"
-            />
-          </a>
-          <a href="../Deals">
-            <img
-              class="banner"
-              src="../../assets/Images/banners/Deals.png"
-              alt="Banner Deals"
-            />
-          </a>
-        </div>
-      </section>
+     
     </main>
     <footer>
       <p class="footer-legal">
@@ -158,5 +140,9 @@
       </div>
     </footer>
     <script type="module" src="../../assets/js/pages/deals.js"></script>
+    <script type="module">
+      import { initAuth } from '../../assets/js/utils/auth.js';
+      document.addEventListener('DOMContentLoaded', initAuth);
+    </script>
   </body>
 </html>

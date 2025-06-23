@@ -41,8 +41,8 @@
                 width="30"
                 height="24"
             /></a>
-            <a class="nav-link" href="/Pages/User/"
-              >Login
+            <a class="nav-link" href="/Pages/User/" id="auth-navbar"
+              ><p>Login</p>
               <img
                 src="../../assets/Images/login.png"
                 alt="Login"
@@ -231,5 +231,10 @@
         </div>
       </div>
     </footer>
+    <script type="module" src="../../assets/js/pages/cart.js"></script>
+    <script type="module">
+      import { initAuth } from "../../assets/js/utils/auth.js";
+      document.addEventListener("DOMContentLoaded", initAuth);
+    </script>
   </body>
 </html>
