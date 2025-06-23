@@ -41,8 +41,8 @@
                 width="30"
                 height="24"
             /></a>
-            <a class="nav-link active" href="/Pages/User/"
-              >Login
+            <a class="nav-link active" href="/Pages/User/" id="auth-navbar"
+              ><p>Login</p>
               <img
                 src="../../assets/Images/login.png"
                 alt="Login"
@@ -59,32 +59,22 @@
           <h3 class="user-Profile">User Profile</h3>
           <div class="user-Profile-data">
             <h3>Name</h3>
-            <p>Juan Perez</p>
+            <p id="name">Cargando...</p>
           </div>
           <div class="user-Profile-data">
             <h3>Phone number</h3>
-            <p>+234-9087632103</p>
+            <p id="phone">Cargando...</p>
           </div>
           <div class="user-Profile-data">
             <h3>Email Address</h3>
-            <p>sade.abim@yahoo.com</p>
+            <p id="email">Cargando...</p>
           </div>
           <div class="user-Profile-data">
-            <h3>Address 1</h3>
-            <p>
-              House 17 Jerusalem Estate, Opp. Peck Shopping Mall. Warri, Delta
-              State.
-            </p>
-            <button class="btn-orange">update shipping address</button>
-          </div>
-          <div class="user-Profile-data">
-            <h3>Payment Method</h3>
-            <p>Debit Card</p>
-            <button class="btn-orange">update billing info</button>
-          </div>
-          <div class="user-Profile-data">
-            <h3>Saved Cards</h3>
-            <p>123* **** **** **09</p>
+            <h3>Address</h3>
+            <p id="address">Cargando...</p>
+            <button class="btn-orange" id="open-address-modal">
+              update shipping address
+            </button>
           </div>
         </div>
         <div class="box">
@@ -125,6 +115,7 @@
         </div>
       </section>
       <button class="btn-change-password">Change Password</button>
+      <button class="btn-logout" onclick="logoutUser()">Cerrar Sesión</button>
     </main>
     <footer>
       <p class="footer-legal">
@@ -185,5 +176,58 @@
         </div>
       </div>
     </footer>
+    <script type="module" src="../../assets/js/pages/user.js"></script>
+    <script type="module">
+      import { initAuth, logoutUser } from "../../assets/js/utils/auth.js";
+      document.addEventListener("DOMContentLoaded", initAuth);
+      // Make logoutUser available globally
+      window.logoutUser = logoutUser;
+    </script>
+    <!-- Modal for updating address -->
+    <div id="address-modal" class="modal" style="display: none">
+      <div class="modal-content">
+        <h2>Actualizar Direccion</h2>
+        <form id="address-form">
+          <input type="text" id="new-address" name="new-address" required />
+          <div class="modal-actions">
+            <button
+              style="
+                font-size: medium;
+                width: 50%;
+                border-width: 0;
+                padding: 8px;
+                border-radius: 8px;
+                cursor: pointer;
+                background-color: #fff;
+              "
+              type="button"
+              id="cancel-address-modal"
+            >
+              Cancel
+            </button>
+            <button
+              style="
+                font-size: medium;
+                width: 50%;
+                border-width: 0;
+                padding: 8px;
+                border-radius: 8px;
+                background-color: #f6e2ab;
+                cursor: pointer;
+              "
+              type="submit"
+              id="save-address-modal"
+            >
+              Save
+            </button>
+          </div>
+        </form>
+        <div
+          id="address-message"
+          style="text-align: center; margin-top: 10px"
+        ></div>
+      </div>
+    </div>
+    <!-- End Modal -->
   </body>
 </html>
