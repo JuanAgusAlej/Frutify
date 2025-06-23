@@ -12,11 +12,11 @@ async function getRelatedProducts(currentProductId, categoryProduct) {
     const relatedProducts = products
       .filter((product) => product.id !== currentProductId)
       .sort(() => Math.random() - 0.5)
-      .slice(0, 4)
+      .slice(0, 5)
       .map((product) => {
         return {
           id: product.id,
-          name: product.title,
+          title: product.title,
           type: product.category,
           price: product.price,
           discountPercentage: product.discountPercentage,
@@ -48,7 +48,7 @@ async function renderRelatedProducts(currentProductId, categoryProduct) {
           '<div class="no-products">No related products found</div>';
         return;
       }
-
+      console.log(relatedProducts);
       container.innerHTML = relatedProducts
         .map((product) => createProductCard(product))
         .join("");
@@ -94,7 +94,9 @@ async function renderProductDetaild() {
     const productDetail = await getProductById();
 
     productSection.innerHTML = `
-      <img id="product-detail-image" class="product-image" />
+      <div class="conteiner-product-detail-image">
+        <img id="product-detail-image" class="product-image" />
+      </div>
       <div class="product-info">
         <h2 id="product-detail-title" class="product-title"></h2>
         <div class="product-details-container">

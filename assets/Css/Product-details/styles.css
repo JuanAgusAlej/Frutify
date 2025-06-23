@@ -6,6 +6,10 @@
 .product-details .product-image {
   width: 50%;
 }
+.conteiner-product-detail-image {
+  display: flex;
+  justify-content: center;
+}
 
 .product-info {
   width: 50%;
@@ -95,4 +99,35 @@ p {
   border-radius: 10px;
   color: #fff;
   padding: 10px;
+}
+
+@media (max-width: 768px) {
+  .card-product {
+    width: 20%;
+    font-size: small;
+  }
+}
+@media (max-width: 640px) {
+  .card-product {
+  }
+}
+@media (max-width: 540px) {
+  .product-details {
+    font-size: medium;
+  }
+  .conteiner-product-detail-image {
+    width: 75%;
+  }
+  .product-details .product-image {
+    width: 75%;
+  }
+}
+@media (max-width: 350px) {
+  .product-details {
+    display: block;
+    font-size: medium;
+  }
+  .product-info {
+    width: 100%;
+  }
 }
