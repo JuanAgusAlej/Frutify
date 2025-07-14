@@ -51,6 +51,7 @@
   width: 30%;
   height: 150px;
   margin-bottom: 2%;
+  text-decoration: none;
 }
 
 .deal-card * {
@@ -78,13 +79,26 @@
   text-align: center;
 }
 
+.deal-card-text {
+  max-width: 100px;
+  padding: 0;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 .deal-card-info span {
   font-size: small;
-  color: #747171;
+  color: #ffffff;
 }
 
 .deal-card-info h4 {
   font-size: medium;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
 }
 
 .deal-card-info .deal-price {

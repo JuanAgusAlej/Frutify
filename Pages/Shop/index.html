@@ -43,8 +43,8 @@
                 width="30"
                 height="24"
             /></a>
-            <a class="nav-link" href="/Pages/User/"
-              >Login
+            <a class="nav-link" href="/Pages/User/" id="auth-navbar"
+              ><p>Login</p>
               <img
                 src="../../assets/Images/login.png"
                 alt="Login"
@@ -88,7 +88,11 @@
             <div class="header-cards-container">
               <h3 class="remove-pading-margin">Productos destacados</h3>
             </div>
-            <div id="container-products" class="conteiner-cards-products"></div>
+            <div id="container-products" class="conteiner-cards-products">
+              <div class="conteiner-loader">
+                <div class="loader"></div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -156,5 +160,9 @@
     <!-- Scripts -->
     <script type="module" src="../../assets/js/main.js"></script>
     <script type="module" src="../../assets/js/pages/shop.js"></script>
+    <script type="module">
+      import { initAuth } from "../../assets/js/utils/auth.js";
+      document.addEventListener("DOMContentLoaded", initAuth);
+    </script>
   </body>
 </html>

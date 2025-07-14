@@ -16,7 +16,8 @@
 }
 
 .card-product {
-  width: 20%;
+  font-size: large;
+  width: 15%;
   background-color: #fff;
   border: 1px solid #cecece;
   border-radius: 20px;
@@ -40,7 +41,6 @@
 }
 
 .card-product .type-card {
-  font-size: 13px;
   padding: 0;
   margin: 0;
   white-space: nowrap;
@@ -53,7 +53,6 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  font-size: 14px;
 }
 .card-product .card-price {
   display: flex;
@@ -67,7 +66,6 @@
 }
 
 .container-price .price-total {
-  font-size: 12px;
   color: red;
   text-decoration: line-through;
 }
@@ -88,20 +86,22 @@
 }
 @media (max-width: 768px) {
   .card-product {
+    width: 20%;
+    font-size: small;
   }
 }
 @media (max-width: 640px) {
   .card-product {
-    width: 30%;
   }
 }
 @media (max-width: 540px) {
   .card-product {
-    width: 40%;
+    width: 30%;
+    font-size: small;
   }
 }
 @media (max-width: 350px) {
-  .card-product {
-    width: 100%;
+  .more-products {
+    display: none;
   }
 }

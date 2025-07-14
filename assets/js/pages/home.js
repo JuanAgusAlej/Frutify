@@ -18,8 +18,8 @@ async function loadFeaturedProducts(skip = 0) {
         type: product.category,
         title: product.title,
         price: product.price,
-        originalPrice: product.price * 1.2,
-        link: `./Pages/Product-details?id=${product.id}`,
+        discountPercentage: product.discountPercentage,
+        link: `./Pages/Product-details/?id=${product.id}`,
       });
       container.innerHTML += cardHTML;
     });
