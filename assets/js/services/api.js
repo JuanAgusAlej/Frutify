@@ -37,7 +37,7 @@ class ApiService {
    */
   static async getTable(table, filterByFormula = null) {
     try {
-      if (!["product", "user", "cart"].includes(table))
+      if (!["product", "user", "cart", "detalle_compras"].includes(table))
         throw "no se encontro la informacion";
 
       let url = `${API_BBDD_URL}/${table}`;
@@ -67,6 +67,16 @@ class ApiService {
   }
 
   /**
+   * Busca un producto por dummyjson id en la base de datos de Airtable
+   * @param {number|string} dummyId - El id del producto en dummyjson
+   * @returns {Promise} - La respuesta de la API con los datos del producto
+   */
+  static async getProductByDummyId(dummyId) {
+    const filterFormula = `{dummy_id} = '${dummyId}'`;
+    return await this.getTable("product", filterFormula);
+  }
+
+  /**
    * Realiza una petición POST a la API
    * @param {string} table - El table de la API
    * @param {Object} data - Los datos a enviar
@@ -74,7 +84,7 @@ class ApiService {
    */
   static async postTable(table, data) {
     try {
-      if (!["product", "user", "cart"].includes(table))
+      if (!["product", "user", "cart", "detalle_compras"].includes(table))
         throw "no se encontro la informacion";
 
       const response = await fetch(`${API_BBDD_URL}/${table}`, {
@@ -97,7 +107,7 @@ class ApiService {
    */
   static async patchTable(table, data) {
     try {
-      if (!["product", "user", "cart"].includes(table))
+      if (!["product", "user", "cart", "detalle_compras"].includes(table))
         throw "no se encontro la informacion";
 
       const response = await fetch(`${API_BBDD_URL}/${table}`, {
@@ -119,7 +129,7 @@ class ApiService {
    */
   static async deleteTable(table) {
     try {
-      if (!["product", "user", "cart"].includes(table))
+      if (!["product", "user", "cart", "detalle_compras"].includes(table))
         throw "no se encontro la informacion";
 
       const response = await fetch(`${API_BBDD_URL}/${table}`, {
