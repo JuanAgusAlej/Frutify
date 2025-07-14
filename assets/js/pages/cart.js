@@ -104,6 +104,26 @@ function removeProduct(productId) {
   renderCart();
 }
 
+function showCartModal(message, isLoading = false, isError = false) {
+  const modal = document.getElementById("cart-message-modal");
+  const text = document.getElementById("cart-message-text");
+  if (!modal || !text) return;
+  modal.style.display = "flex";
+  if (isLoading) {
+    text.innerHTML = `<div><span class="loader"></span><p>${message}</p> </div>`;
+    text.style.color = "#333";
+  } else {
+    text.innerHTML = message;
+    text.style.color = isError ? "red" : "green";
+  }
+}
+function hideCartModal(delay = 1500) {
+  setTimeout(() => {
+    const modal = document.getElementById("cart-message-modal");
+    if (modal) modal.style.display = "none";
+  }, delay);
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   renderCart();
 
@@ -113,10 +133,12 @@ document.addEventListener("DOMContentLoaded", () => {
       const cartProducts =
         JSON.parse(localStorage.getItem("cart_products")) || [];
       if (cartProducts.length === 0) {
-        alert("El carrito está vacío.");
+        showCartModal("El carrito está vacío.", false, true);
+        hideCartModal();
         return;
       }
       try {
+        showCartModal("Procesando compra...", true);
         const cart = [];
         for (const producto of cartProducts) {
           const airtableProduct = await ApiService.getProductByDummyId(
@@ -126,9 +148,12 @@ document.addEventListener("DOMContentLoaded", () => {
             !airtableProduct.records ||
             airtableProduct.records.length === 0
           ) {
-            alert(
-              `No se encontró el producto en la base de datos interna (dummy_id: ${producto.id})`
+            showCartModal(
+              `No se encontró el producto en la base de datos interna (dummy_id: ${producto.id})`,
+              false,
+              true
             );
+            hideCartModal();
             continue;
           }
           const product_id = airtableProduct.records[0].id;
@@ -148,10 +173,10 @@ document.addEventListener("DOMContentLoaded", () => {
         }
         const user = getCurrentUser();
         if (!user || !user.id) {
-          alert("No se pudo obtener el usuario actual.");
+          showCartModal("No se pudo obtener el usuario actual.", false, true);
+          hideCartModal();
           return;
         }
-        console.log(user.id);
         const value_total = cartProducts.reduce(
           (sum, p) => sum + p.price_total,
           0
@@ -163,7 +188,7 @@ document.addEventListener("DOMContentLoaded", () => {
             {
               fields: {
                 value_total: value_total,
-                user_id: [user.id],
+                user: [user.id],
                 fecha_creada: fecha_creada,
                 detalle_compras: cart,
               },
@@ -171,11 +196,13 @@ document.addEventListener("DOMContentLoaded", () => {
           ],
         };
         await ApiService.postTable("cart", cartData);
-        alert("¡Compra realizada con éxito!");
+        showCartModal("¡Compra realizada con éxito!");
         localStorage.removeItem("cart_products");
         renderCart();
+        hideCartModal();
       } catch (error) {
-        alert("Ocurrió un error al procesar la compra.");
+        showCartModal("Ocurrió un error al procesar la compra.", false, true);
+        hideCartModal();
       }
     });
   }

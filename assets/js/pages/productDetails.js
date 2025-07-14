@@ -156,14 +156,41 @@ async function renderProductDetaild() {
   }
 }
 
+function showCartModal(message, isLoading = false, isError = false) {
+  const modal = document.getElementById("cart-message-modal");
+  const text = document.getElementById("cart-message-text");
+  if (!modal || !text) return;
+  modal.style.display = "flex";
+  if (isLoading) {
+    text.innerHTML = `<div><span class="loader"></span><p>${message}</p> </div>`;
+    text.style.color = "#333";
+  } else {
+    text.innerHTML = message;
+    text.style.color = isError ? "red" : "green";
+  }
+}
+function hideCartModal(delay = 1500) {
+  setTimeout(() => {
+    const modal = document.getElementById("cart-message-modal");
+    if (modal) modal.style.display = "none";
+  }, delay);
+}
+
 // Agregar producto al carrito
 async function addToCart(productId) {
   try {
+    showCartModal("Agregando producto al carrito...", true);
+
     const quantityValue = document.querySelector(".quantity-value");
     const product = await ApiService.get(`/products/${productId}`);
     const user = getCurrentUser();
     if (!user) {
-      alert("Debes iniciar sesión para agregar productos al carrito.");
+      showCartModal(
+        "Debes iniciar sesión para agregar productos al carrito.",
+        false,
+        true
+      );
+      hideCartModal();
       return;
     }
     // Buscar el record ID del producto en Airtable
@@ -191,7 +218,12 @@ async function addToCart(productId) {
         !newProductResponse.records ||
         newProductResponse.records.length === 0
       ) {
-        alert("No se pudo agregar el producto a la base de datos interna.");
+        showCartModal(
+          "No se pudo agregar el producto a la base de datos interna.",
+          false,
+          true
+        );
+        hideCartModal();
         return;
       }
       airtableProductId = newProductResponse.records[0].id;
@@ -236,10 +268,12 @@ async function addToCart(productId) {
       });
     }
     localStorage.setItem("cart_products", JSON.stringify(cartProducts));
-    alert("Producto agregado al carrito correctamente.");
+    showCartModal("Producto agregado al carrito correctamente.");
+    hideCartModal();
   } catch (error) {
     console.error("Error adding product to cart:", error);
-    alert("Error al agregar el producto al carrito.");
+    showCartModal("Error al agregar el producto al carrito.", false, true);
+    hideCartModal();
   }
 }
 

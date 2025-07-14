@@ -50,6 +50,7 @@
   border: none;
   border-bottom: 1px solid #df5a3d;
   font-size: medium;
+  cursor: pointer;
 }
 
 .title-order-history {
@@ -64,6 +65,7 @@
   color: white;
   padding: 15px;
   font-size: medium;
+  cursor: pointer;
 }
 
 .btn-logout {

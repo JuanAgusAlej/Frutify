@@ -42,9 +42,10 @@ class ApiService {
 
       let url = `${API_BBDD_URL}/${table}`;
       if (filterByFormula) {
-        url += `?filterByFormula=${encodeURIComponent(filterByFormula)}`;
+        const filter = encodeURIComponent(filterByFormula);
+        url += `?filterByFormula=${filter}`;
       }
-
+      console.log(headers);
       const response = await fetch(url, {
         method: "GET",
         headers,
@@ -54,6 +55,11 @@ class ApiService {
       console.error("Error en la petición GET:", error);
       throw error;
     }
+  }
+
+  static async getTableById(table, id) {
+    const filterFormula = `{id} = '${id}'`;
+    return await this.getTable(table, filterFormula);
   }
 
   /**
