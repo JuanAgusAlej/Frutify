@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../../assets/Css/styles.css" />
     <link rel="stylesheet" href="../../assets/Css/Cart/styles.css" />
+    <link rel="stylesheet" href="../../assets/Css/Product-details/modal.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -142,6 +143,12 @@
         </div>
       </div>
     </footer>
+    <!-- Modal para mensajes de agregar al carrito -->
+    <div id="cart-message-modal" class="modal">
+      <div class="modal-content">
+        <span id="cart-message-text"></span>
+      </div>
+    </div>
     <script type="module" src="../../assets/js/pages/cart.js"></script>
     <script type="module">
       import { initAuth } from "../../assets/js/utils/auth.js";

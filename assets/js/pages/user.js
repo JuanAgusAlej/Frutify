@@ -129,7 +129,49 @@ function setupAddressModal() {
   });
 }
 
+async function renderOrderHistory() {
+  const user = getCurrentUser();
+  if (!user || !user.id) return;
+  const response = await ApiService.getTable("cart");
+  console.log(response);
+  const container = document.querySelector(".order-history-data-container");
+  if (!container) return;
+
+  if (!response.records || response.records.length === 0) {
+    container.innerHTML = "<p>No tienes órdenes previas.</p>";
+    return;
+  }
+
+  const orderUser = response.records.filter(
+    (cart) =>
+      Array.isArray(cart.fields.user) && cart.fields.user.includes(user.id)
+  );
+
+  if (!orderUser || orderUser.length === 0) {
+    container.innerHTML = "<p>No tienes órdenes previas.</p>";
+    return;
+  }
+
+  container.innerHTML = response.records
+    .map(
+      (cart) => `
+    <div class="order-history-data">
+      <div>
+        <h3>Order ID</h3>
+        <p>${cart.id}</p>
+      </div>
+      <div>
+        <h3>$${Number(cart.fields.value_total).toFixed(2)}</h3>
+        <p>${cart.fields.fecha_creada}</p>
+      </div>
+    </div>
+  `
+    )
+    .join("");
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   loadUserProfile();
   setupAddressModal();
+  renderOrderHistory();
 });

@@ -96,6 +96,7 @@ p {
   width: 100%;
   background-color: #df5a3d;
   border: none;
+  cursor: pointer;
   border-radius: 10px;
   color: #fff;
   padding: 10px;

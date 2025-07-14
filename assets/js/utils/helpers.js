@@ -41,10 +41,6 @@ export const createProductCard = (product) => {
                         : ""
                     }
                 </div>
-                <button class="card-button">
-                    <i class="fa-solid fa-cart-plus"></i>
-                    <spam>Add</spam>
-                </button>
             </div>
         </a>
     `;
@@ -84,10 +80,7 @@ export const createDealCard = (product) => {
             <h3>$${price.toFixed(2)}</h3>
             <h5>$${originalPrice.toFixed(2)}</h5>
           </div>
-          <button>
-            <i class="fa-solid fa-cart-shopping"></i>
-            <span>Add to Cart</span>
-          </button>
+     
         </div>
       </div>
     </a>
