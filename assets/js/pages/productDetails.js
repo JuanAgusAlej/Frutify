@@ -1,5 +1,6 @@
-import ApiService from "./services/api.js";
-import { createProductCard } from "./utils/helpers.js";
+import ApiService from "../services/api.js";
+import { createProductCard } from "../utils/helpers.js";
+import { getCurrentUser } from "../utils/auth.js";
 
 // producto relacionado
 async function getRelatedProducts(currentProductId, categoryProduct) {
@@ -160,17 +161,85 @@ async function addToCart(productId) {
   try {
     const quantityValue = document.querySelector(".quantity-value");
     const product = await ApiService.get(`/products/${productId}`);
-
-    const addToCart = {
-      ...product,
-      quantity: parseInt(quantityValue.textContent),
+    const user = getCurrentUser();
+    if (!user) {
+      alert("Debes iniciar sesión para agregar productos al carrito.");
+      return;
+    }
+    // Buscar el record ID del producto en Airtable
+    const airtableProduct = await ApiService.getProductByDummyId(productId);
+    let airtableProductId;
+    if (!airtableProduct.records || airtableProduct.records.length === 0) {
+      // Si no existe, lo agrego a Airtable SIN cant y cart
+      const newProductData = {
+        records: [
+          {
+            fields: {
+              name: product.title,
+              img: product.images[0],
+              price: product.price,
+              dummy_id: product.id,
+            },
+          },
+        ],
+      };
+      const newProductResponse = await ApiService.postTable(
+        "product",
+        newProductData
+      );
+      if (
+        !newProductResponse.records ||
+        newProductResponse.records.length === 0
+      ) {
+        alert("No se pudo agregar el producto a la base de datos interna.");
+        return;
+      }
+      airtableProductId = newProductResponse.records[0].id;
+    } else {
+      airtableProductId = airtableProduct.records[0].id;
+    }
+    // Construir el objeto para la tabla cart
+    const valueTotal = product.price * parseInt(quantityValue.textContent);
+    const cartData = {
+      records: [
+        {
+          fields: {
+            products: [airtableProductId],
+            value_total: valueTotal,
+          },
+        },
+      ],
     };
+    // Aquí iría tu llamada para guardar el cart (no incluida en el fragmento original)
 
-    console.log("Adding to cart:", addToCart);
-
-    // agregar la funcion que agrega los datos a la bbdd
+    // --- Manejo de localStorage para múltiples productos ---
+    let cartProducts = JSON.parse(localStorage.getItem("cart_products")) || [];
+    const quantityToAdd = parseInt(quantityValue.textContent);
+    const price = product.price;
+    const existingProductIndex = cartProducts.findIndex(
+      (p) => p.id === product.id
+    );
+    if (existingProductIndex !== -1) {
+      // Si ya existe, actualizar cantidad y price_total
+      cartProducts[existingProductIndex].cant += quantityToAdd;
+      cartProducts[existingProductIndex].price_total =
+        cartProducts[existingProductIndex].cant * price;
+    } else {
+      // Si no existe, agregarlo
+      cartProducts.push({
+        id: product.id,
+        title: product.title,
+        img: product.images[0],
+        price: price,
+        cant: quantityToAdd,
+        price_total: price * quantityToAdd,
+      });
+    }
+    localStorage.setItem("cart_products", JSON.stringify(cartProducts));
+    alert("Producto agregado al carrito correctamente.");
   } catch (error) {
     console.error("Error adding product to cart:", error);
+    alert("Error al agregar el producto al carrito.");
   }
 }
 
